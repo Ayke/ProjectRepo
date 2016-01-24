@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+
+
+<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal" >
+    登记账号
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog ver" >
+        <div class="modal-content btn-group-vertical" id="mySubModal">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">登记账号</h4>
+            </div>
+
+            <div class="form-signin"  >
+                <label style="font-size: 15px">输入您想开放的用户名</label>
+                <input type="text" id="button1" style="margin-top: 0px"  class="form-control form-signin-heading"  placeholder="Username">
+                <label style="font-size: 15px">输入设定密码</label>
+                <input type="text" id="button2" style="margin-top: 0px" class="form-control form-signin-heading" placeholder="Password">
+                <label style="font-size: 15px">再次输入密码</label>
+                <input type="text" id="button3" style="margin-top: 0px" class="form-control form-signin-heading" placeholder="Password">
+            </div>
+
+            <div class="modal-footer" style="margin-top: 12px" >
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">确认开户</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+
+</html>

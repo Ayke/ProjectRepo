@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="../../favicon.ico">
+
+		<title>main page</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- jstree css -->
+		<link rel="stylesheet" href="dist/themes/default/style.min.css" />
+		
+		<!-- Custom styles for this template -->
+		<link href="main-page.css" rel="stylesheet">
+        <link rel="stylesheet" href="WebDesign/style.css">
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="design.js"></script>
+		
+		
+		<!-- jstree -->
+		<script src="dist/jstree.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+		
+		
+	</head>
+	
+	<!-- js tree for folder-->
+	<script>
+		$(document).ready(function () {
+			$('#jstree').jstree({
+				"plugins" : [ "wholerow"]
+			});
+			$('#jstree').on("changed.jstree", function (e, data) {
+				console.log(data.selected);
+			});
+			
+			/*$('button').on('click', function () {
+				$('#jstree').jstree(true).select_node('child_node_1');
+				$('#jstree').jstree('select_node', 'child_node_1');
+				$.jstree.reference('#jstree').select_node('child_node_1');
+			});*/
+		});
+	</script>
+  
+	<script>
+		
+		$(document).ready(function(){
+			$("#folder-btn-config").click(function(){
+				var txt="<a href='#' class='thumbnail' data-toggle='modal' data-target='#myModal6' ><img src='a.jpg' alt='...' ></a>";
+				$("#picture").append(txt);
+			});
+		});
+	</script>
+	
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top ">
+			<div class="navbar-header"> 
+			  <a class="navbar-brand " href="javascript:void(0)">广告位招租</a>
+			</div>
+			
+		  <div class="container" id="nav-bar">
+			<div class="nav navbar-right navbar-nav" >
+				<li>
+					<a href="javascript:void(0)" >
+						<span class="glyphicon glyphicon-time user-name" aria-hidden="true" ></span>
+						Latest
+					</a>
+				</li>
+				<li class="dropdown">
+					<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-user user-name" aria-hidden="true" ></span>
+						<span class="user-name">User</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal" >Configuration</a></li>
+						<li><a href="javascript:void(0)">Logout</a></li>
+					</ul>
+				</li>
+				
+			</div>
+		  </div>
+		</nav>
+		
+		<div class="container-fluid">
+			<div class="container panel panel-default" id="side-bar" role="complementary">
+				<a href="javascript:void(0)">
+					<h3><span class="glyphicon glyphicon-home" aria-hidden="true" ><span id="home">Home</span></span></h3>
+				</a>
+				<hr/>
+				
+				<div id="jstree">
+					<ul>
+					  <li>Root node 1
+						<ul>
+						  <li id="child_node_1">Child node 1ssssssssssssssssssss</li>
+						  <li>Child node 2</li>
+						</ul>
+						</li>
+						<li>Root node 2</li>
+					</ul>
+				</div>
+				
+				<div class="btn-group" role="group" id="btns">
+					<button type="button" class="btn btn-default folder-btn" data-toggle="modal" data-target="#myModal4" id="folder-btn-add" >
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+					</button>
+					<button type="button" class="btn btn-default folder-btn" id="folder-btn-minus"> 
+						<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+					</button>
+					<button type="button" class="btn btn-default folder-btn" id="folder-btn-config">
+						<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+					</button>
+				</div>
+				
+			</div>
+			
+			<div class="container-fluid panel panel-default " id="main-content" role="main">
+				<div class="container" id="main-nav">
+					<div class="btn-group hidden-xs " role="group" id="select-btns">
+						<button type="button" class="btn btn-default" id="folder-btn">
+							Select all
+						</button>
+						<button type="button" class="btn btn-default" id="folder-btn">
+							Inverse
+						</button>
+					</div>
+					<div class="container-fluid hidden-xs hidden-sm hidden-md " id="bread">
+						<ol class="breadcrumb">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Library</a></li>
+							<li class="active">Data</li>
+						</ol>
+					</div>
+					
+					<div class="btn-group" role="group" id="operate-btns">
+						<button type="button" class="btn btn-default" id="folder-btn"> 
+							<span class="glyphicon glyphicon-erase" aria-hidden="true"></span>Delete
+						</button>
+						<button type="button" class="btn btn-default" id="folder-btn">
+							<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>Upload
+						</button>
+						<button type="button" class="btn btn-default" id="folder-btn">
+							<span class="glyphicon glyphicon-cloud-download" aria-hidden="true" id="download-btn"></span>Download
+						</button>
+						<button type="button" class="btn btn-default" id="folder-btn" data-toggle="modal" data-target="#myModal7" >
+							<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>Move
+						</button>
+					</div>
+				</div>
+				<div class="container-fluid" id="picture">
+					
+				</div>
+
+
+                <div class="modal fade" id="myModal" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog ver" >
+                        <div class="modal-content btn-group-vertical" id="mySubModal">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">登记账号</h4>
+                            </div>
+
+                            <div class="form-signin"  >
+                                <label style="font-size: 15px">输入您想开放的用户名</label>
+                                <input type="text" id="button1" style="margin-top: 0px"  class="form-control form-signin-heading"  placeholder="Username">
+                                <label style="font-size: 15px">输入设定密码</label>
+                                <input type="text" id="button2" style="margin-top: 0px" class="form-control form-signin-heading" placeholder="Password">
+                                <label style="font-size: 15px">再次输入密码</label>
+                                <input type="text" id="button3" style="margin-top: 0px" class="form-control form-signin-heading" placeholder="Password">
+                            </div>
+
+                            <div class="modal-footer" style="margin-top: 12px" >
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">确认开户</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal4" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog ver">
+                        <div class="modal-content btn-group-vertical" id="mySubModal4">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel4">创建新的相册</h4>
+                            </div>
+
+                            <div class="form-signin">
+                                <label style="font-size: 20px">输入要建立的相册名称</label>
+                                <div class="row">
+                                    <input type="text" class="form-control" placeholder=" " style="width:220px;margin-left: 15px">
+
+                                    <label style="font-size: 20px;margin-top: 30px;margin-left: 12px">选择可见该相册的账号</label>
+                                    <div class="col-md-7">
+                                        <iframe src="webdesign/pickfriend.html" marginheight="60px" marginwidth="30px" height="200" width="270" frameborder="0" align="left"></iframe>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="modal-footer" style="margin-top:20px" >
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">确认建立</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal7" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog ver">
+                        <div class="modal-content btn-group-vertical " id="mySubModal7">
+                            <div class="modal-header" >
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel7">移动文件夹</h4>
+                            </div>
+                            <div class="form-signin">
+                                <div class="row">
+                                    <div class="col-md-7" style="margin-top: 5px">
+                                        <label style="font-size: 20px";>选择要移动文件夹所到位置</label>
+                                        <iframe src="pickfile2.html" marginheight="30px"  width="270"  height="230" frameborder="0" style="margin-left: 0px;margin-top: 25px" ></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer" style="margin-top: 40px">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">确认修改</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+			</div>
+			
+		</div>
+
+
+
+	</body>
+	
+</html>

@@ -1,0 +1,106 @@
+<html>
+<head>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="row">
+<div class="container">
+<div class="col-md-4" style="margin-left: -50px">
+<br>
+    <h3>Values Of Regs:</h3>
+    <div class="col-md-3">
+    <label>t0: <input id="t0" style="width: 60px"></label><br>
+    <label>t1: <input id="t1" style="width: 60px"></label><br>
+    <label>t2: <input id="t2" style="width: 60px"></label><br>
+    <label>t3: <input id="t3" style="width: 60px"></label><br>
+    <label>t4: <input id="t4" style="width: 60px"></label><br>
+    <label>t5: <input id="t5" style="width: 60px"></label><br>
+    <label>t6: <input id="t6" style="width: 60px"></label><br>
+    <label>t7: <input id="t7" style="width: 60px"></label><br>
+        </div>
+
+    <div class="col-md-3">
+    <label>s0: <input id="s0" style="width: 60px"></label><br>
+    <label>s1: <input id="s1" style="width: 60px"></label><br>
+    <label>s2: <input id="s2" style="width: 60px"></label><br>
+    <label>s3: <input id="s3" style="width: 60px"></label><br>
+    <label>s4: <input id="s4" style="width: 60px"></label><br>
+    <label>s5: <input id="s5" style="width: 60px"></label><br>
+    <label>s6: <input id="s6" style="width: 60px"></label><br>
+    <label>s7: <input id="s7" style="width: 60px"></label><br>
+        </div>
+
+    <div class="col-md-3">
+        <label>zero: <input id="zero" style="width: 60px"></label><br>
+        <label>at: <input id="at" style="width: 60px"></label><br>
+        <label>v0: <input id="v0" style="width: 60px"></label><br>
+        <label>v1: <input id="v1" style="width: 60px"></label><br>
+        <label>a0: <input id="a0" style="width: 60px"></label><br>
+        <label>a1: <input id="a1" style="width: 60px"></label><br>
+        <label>a2: <input id="a2" style="width: 60px"></label><br>
+        <label>a3: <input id="a3" style="width: 60px"></label><br>
+    </div>
+
+    <div class="col-md-3">
+        <label>t8: <input id="t8" style="width: 60px"></label><br>
+        <label>t9: <input id="t9" style="width: 60px"></label><br>
+        <label>k0: <input id="k0" style="width: 60px"></label><br>
+        <label>k1: <input id="k1" style="width: 60px"></label><br>
+        <label>gp: <input id="gp" style="width: 60px"></label><br>
+        <label>sp: <input id="sp" style="width: 60px"></label><br>
+        <label>fp: <input id="fp" style="width: 60px"></label><br>
+        <label>ra: <input id="ra" style="width: 60px"></label><br>
+    </div>
+
+    <div>
+        <button class="btn btn-success" onclick="changeValue()" style="margin-left: 80px;margin-top: 30px">Submit</button>
+    </div>
+
+</div>
+
+
+<div class="col-md-4">
+<br>
+<h3>Compile Code:</h3><textarea rows="15" cols="25" id="comCode" style="resize:none"></textarea>
+</div>
+
+    <div class="col-md-1" style="margin-left: -90px;">
+        <a><span class="glyphicon glyphicon-arrow-right" onclick="coToMa()" style="margin-top:90px;font-size: 80px;" aria-hidden="true"></span></a>
+        <a><span class="glyphicon glyphicon-arrow-left"  onclick="maToCo()" style="margin-top:30px;font-size: 80px;" aria-hidden="true"></span></a>
+
+    </div>
+
+  <div class="col-md-4">
+      <div class="col-md-1">
+          <span class="glyphicon glyphicon-hand-right" id="PC" style="font-size:20px;margin-top: 78px" aria-hidden="true"></span>
+      </div>
+
+    <div class="col-md-8" style="">
+    <br>
+        <h3>Machine Code:</h3><textarea rows="15" cols="25" id="macCode" style="resize:none"></textarea>
+    </div>
+
+    <div class="col-md-2" style="margin-top:40px" >
+        <br><br>
+        <a><span class="glyphicon glyphicon-forward" style="font-size:40px;" aria-hidden="true" onclick="runOne()"></span></a><br><br>
+        <a><span class="glyphicon glyphicon-fast-forward" style="font-size:40px;" aria-hidden="true" onclick="runAll()"></span></a><br><br>
+        <a><span class="glyphicon glyphicon-refresh" style="font-size:40px;" onclick="refresh()" aria-hidden="true"></span></a><br><br>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+    <script src="cal.js"></script>
+    <script src="assembler.js"></script>
+    <script src="disassembler.js"></script>
+    <script src="top.js"></script>
+    <script src="operations.js"></script>
+
+</div>
+</body>
+</html>
